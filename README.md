@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Objective
 
 Create one location wherein all of my FreeCodeCamp Frontend Libraries projects are stored.
-[Github Pages](https://yet2frag.github.io/frontend-compilation/)
+[Github Pages](https://dsaragih.github.io/frontend-compilation/)
 
 ## Issues
 
