@@ -1,18 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
 
-body {
+.container {
+  position: fixed;
+  top: 85px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
   background-color: #7ad5d5;
 }
 
-#root {
-  font-family: "Merienda";
+.Clock {
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-}
-
-#Clock {
+  font-family: "Merienda";
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,14 +23,14 @@ body {
   align-content: center;
 }
 
-#title {
+.title {
   font-size: 3em;
   width: 100%;
   text-align: center;
   margin: 30px;
 }
 
-#timer {
+.timer {
   width: 80%;
   text-align: center;
   font-size: 1.5em;
@@ -37,14 +40,14 @@ body {
   padding: 5px;
 }
 
-button {
+.button {
   margin: 15px;
   align-self: center;
   font-size: 1.5em;
 }
 
-#break-label,
-#session-label {
+.break-label,
+.session-label {
   width: 50%;
   text-align: center;
   font-size: 1.2em;

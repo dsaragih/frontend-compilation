@@ -1,5 +1,5 @@
 import React from 'react';
-import './drum-machine.css';
+import styles from './drum-machine.module.css';
 import * as Mui from '@material-ui/core/';
 import { withStyles } from '@material-ui/styles';
 import bass from './sounds/bass.mp3';
@@ -28,7 +28,7 @@ const pads = {
 
 // From Material-UI: https://material-ui.com/components/switches/
 const theme = Mui.createTheme();
-// const AntSwitch = Mui.withStyles((theme) => ({
+// const AntSwitch = withStyles((theme) => ({
 //   root: {
 //     width: 28,
 //     height: 16,
@@ -80,7 +80,7 @@ const Slider = props => {
 
 const Pads = props => {
   return (
-    <button className="drum-pad" id={props.value} onClick={props.onClick}>
+    <button className={styles['drum-pad']} id={props.value} onClick={props.onClick}>
       {props.keypress}
     </button>
   )
@@ -102,7 +102,7 @@ class Board extends React.Component {
       board.push(this.renderPad([key, sound]));
     }
     return (
-      <div id="board">
+      <div className={styles.board}>
         {board}
       </div>
     )
@@ -173,12 +173,14 @@ class Drum extends React.Component {
 
   render() {
     return (
-      <div id="drum-machine">
+      <div className={styles.container}>
+
+      <div className={styles['drum-machine']}>
         <Board 
         board={this.state.board} 
         onClick={(id, sound) => this.handleClick(id, sound)}
         />
-        <div id="controls">
+        <div className={styles.controls}>
           <Mui.Typography component="div">
             <Mui.Grid component="label" container alignItems="center" spacing={1}>
               <Mui.Grid item>Off</Mui.Grid>
@@ -190,11 +192,12 @@ class Drum extends React.Component {
               <Mui.Grid item>On</Mui.Grid>
             </Mui.Grid>
           </Mui.Typography>
-          <div id="display">
+          <div className={styles.display}>
             {this.state.display}
           </div>
           <Slider value={this.state.volume} onChange={(e, v) => this.handleVolumeChange(e, v)}/>
         </div>
+      </div>
       </div>
     )
   }

@@ -1,24 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 
-body {
-  height: 100%;
-  margin: 0;
-}
-
-#page {
+.page {
   position: fixed;
-  padding: 0;
-  margin: 0;
-
-  top: 0;
+  top: 85px;
   left: 0;
-
-  width: 100%;
-  height: 100%;
-  transition: background-color 800ms linear;
+  bottom: 0;
+  right: 0;
+  overflow: auto;  transition: background-color 800ms linear;
 }
 
-#quote-box {
+.quoteBox {
   background-color: white;
   padding: 30px;
   width: 35%;
@@ -37,29 +28,29 @@ body {
     opacity: 1;
   }
 }
-blockquote {
+.text{
   font-size: 1.75em;
   text-align: center;
   font-weight: bold;
   animation: fadein 2s;
 }
 
-blockquote:before {
+.text:before{
   position: absolute;
   content: open-quote;
-  font-size: 4em;
-  margin-left: -0.5em;
+  font-size: 2em;
+  margin-left: -0.4em;
   margin-top: -0.4em;
 }
 
-#author {
+.author {
   text-align: right;
   margin: 20px;
   display: block;
   margin-top: 5px;
 }
 
-#new-quote {
+.newQuote {
   float: right;
   border: none;
   color: white;
@@ -81,7 +72,7 @@ blockquote:before {
 }
 
 /* Twitter */
-.fa-twitter {
+.fa_twitter {
   background: #55acee;
   color: white;
 }

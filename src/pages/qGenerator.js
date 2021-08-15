@@ -1,4 +1,4 @@
-import './qGenerator.css';
+import styles from './qGenerator.module.css';
 import React from 'react';
 
 const colors = ["#420420", "#008080", "#8a2be2", "#047806", "#000080"]
@@ -36,12 +36,12 @@ class Quote extends React.Component {
   render() {
     const color = colors[this.state.index];
     return (
-      <div id="page" style={{backgroundColor: color}}>
-        <div id="quote-box">
-          <blockquote id="text" style={{color: color}}>{this.state.content}</blockquote>
-          <cite id="author" style={{color: color}}>- {this.state.author}</cite>
-          <button id="new-quote" className="button" style={{backgroundColor: color}} onClick={this.randomQuote}>New Quote</button>
-          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button fa fa-twitter" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <div className={styles.page} style={{backgroundColor: color}}>
+        <div className={styles.quoteBox}>
+          <blockquote className={styles.text} style={{color: color}}>{this.state.content}</blockquote>
+          <cite className={styles.author} style={{color: color}}>- {this.state.author}</cite>
+          <button className={styles.newQuote} style={{backgroundColor: color}} onClick={this.randomQuote}>New Quote</button>
+          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className={styles.twitter_share_button + ' '+ styles.fa +''+ styles.fa_twitter} data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
     );

@@ -1,16 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Arimo);
 
-body {
+.page {
   background-color: #dcedc1;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
 }
 
-#container {
+.container {
   margin: 20px auto;
   padding: 25px;
   height: 640px;
 }
 
-#editor {
+.editor {
   display: block;
   background-color: #f1f2ef;
   margin-left: auto;
@@ -22,7 +28,7 @@ body {
   float: left;
 }
 
-#preview {
+.preview {
   width: 55%;
   font-size: 1.2em;
   font-family: 'Arimo';
@@ -34,6 +40,6 @@ body {
   overflow: auto;
 }
 
-#preview img {
+.preview img {
   max-width: 90%;
 }

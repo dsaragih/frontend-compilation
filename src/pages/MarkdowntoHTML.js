@@ -1,4 +1,4 @@
-import './MarkdowntoHTML.css';
+import styles from './MarkdowntoHTML.module.css';
 import React from 'react';
 import DOMPurify from 'dompurify';
 import marked from 'marked';
@@ -54,14 +54,14 @@ function createMarkup(markdown) {
 
 function Editor(props) {
   return (
-    <textarea id="editor" value={props.input} onChange={props.onChange}>
+    <textarea className={styles.editor} value={props.input} onChange={props.onChange}>
     </textarea>
   )
 }
 
 function Previewer(props) {
   return (
-    <div id="preview" dangerouslySetInnerHTML={props.text}>
+    <div className={styles.preview} dangerouslySetInnerHTML={props.text}>
     </div>
   )
 }
@@ -93,9 +93,11 @@ class Markdown extends React.Component {
   
   render () {
     return (
-      <div id="container">
+      <div className={styles.page}>
+      <div className={styles.container}>
         <Editor input={this.state.input} onChange={(e) => this.handleChange(e)}/>
         <Previewer text={this.state.output}/>
+      </div>
       </div>
     );
   };

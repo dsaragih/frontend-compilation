@@ -1,4 +1,4 @@
-import './Calculator.css';
+import styles from './Calculator.module.css';
 import React from 'react';
 
 
@@ -45,7 +45,7 @@ const isOperator = input => input === '+' || input === '*' || input === '/' || i
 
 const Square = props => {
   return (
-    <button className="square" onClick={props.onClick} id={props.id}>
+    <button className={styles[props.id] + ' ' + styles.square} onClick={props.onClick}>
       {props.value === '*' ? 'x' : props.value}
     </button>
   )
@@ -72,7 +72,7 @@ class Board extends React.Component {
       }
     };
     return (
-      <div id="buttons">
+      <div className={styles.press}>
         {rows}
       </div>
     );
@@ -182,13 +182,16 @@ class Calculator extends React.Component {
   render () {
     console.log(this.state)
     return (
-      <div id="calculator">
-        <div id="calculation">{this.state.calculation}</div>
-        <div id="display">{this.state.display}</div>
+      <div className={styles.container}>
+
+      <div className={styles.calculator}>
+        <div className={styles.calculation}>{this.state.calculation}</div>
+        <div className={styles.display}>{this.state.display}</div>
         <Board 
           squares={this.state.grid} 
           onClick={i => this.handleClick(i)}
           />
+      </div>
       </div>
     )
   }

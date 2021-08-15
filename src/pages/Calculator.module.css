@@ -1,14 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-#root {
-  width: 100%;
-  font-family: "Poppins", "sans serif";
-}
-body {
+.container {
   background-color: #ffffda;
+  position: fixed;
+  top: 85px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
 }
 
-#calculator {
+.calculator {
+  font-family: "Poppins", "sans serif";
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
@@ -18,7 +21,7 @@ body {
   background-color: #444444;
 }
 
-#display {
+.display {
   height: 80px;
   padding: 10px;
   text-align: right;
@@ -27,14 +30,19 @@ body {
   color: white;
 }
 
-#calculation {
+.calculation {
   height: 30px;
   padding: 10px;
-  margin-bottom: -20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
   text-align: right;
   color: #ffff66;
 }
 
+
+.press {
+  margin: 10px;
+}
 .square {
   width: 25%;
   height: 50px;
@@ -42,20 +50,15 @@ body {
   padding: 3px;
 }
 
-#clear,
-#zero {
+.clear, .zero {
   width: 50%;
 }
-
-#buttons {
-  margin: 10px;
-}
-#clear {
+.clear {
   background-color: #ff7f7f;
 }
 
-#equals {
+.equals {
   height: 100px;
-  float: right;
+  float: right; 
   background-color: #e0ffff;
 }

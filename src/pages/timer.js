@@ -1,21 +1,21 @@
 import React from 'react';
-import './timer.css';
+import styles from './timer.module.css';
 import url from './beep/beep.mp3';
 
 const format = time => new Date(1000 * time).toISOString().substring(14, 19);
 
 const Label = props => {
     return (
-      <div className="adjustment">
+      <div className={styles.adjustment}>
           <button 
-          id={`${props.label}-decrement`} 
+          className={styles[`${props.label}-decrement`] + ' ' + styles.button} 
           onClick={() => props.onClick(props.label, "dec")}
           >
             &darr;
           </button>
-          <span id={`${props.label}-length`}>{format(props.time)}</span>
+          <span className={styles[`${props.label}-length`]}>{format(props.time)}</span>
           <button 
-          id={`${props.label}-increment`} 
+          className={styles[`${props.label}-increment`]+ ' ' + styles.button} 
           onClick={() => props.onClick(props.label, "inc")}
           >
             &uarr;
@@ -166,24 +166,27 @@ class Timer extends React.Component {
   render() {
     const color = this.state.belowMinute ? '#8B0000' : '#000000';
     return (
-    <div id="Clock">
-      <div id="title">25 + 5 Clock</div>
-      <div id="break-label">
+    <div className={styles.container}>
+
+    <div className={styles.Clock}>
+      <div className={styles.title}>25 + 5 Clock</div>
+      <div className={styles['break-label']}>
         Break Length
         <Label time={this.breakTimer} onClick={this.handleClick} label="break"/>
       </div>
-      <div id="session-label">
+      <div className={styles['session-label']}>
         Session Length
         <Label time={this.sessionTimer} onClick={this.handleClick} label="session"/>
       </div>
-      <div id="timer" style={{color: color}}>
-        <div id="timer-label">{this.state.setting}</div>
-        <div id="time-left">
+      <div className={styles.timer} style={{color: color}}>
+        <div className={styles['timer-label']}>{this.state.setting}</div>
+        <div className={styles['time-left']}>
           {this.state.setting === "Session" ? format(this.state.session) : format(this.state.break)}
         </div>
       </div>
-      <button id="start_stop" onClick={this.handleStart}>Start/Stop</button>
-      <button id="reset" onClick={this.handleReset}>Reset</button>
+      <button className={styles.start_stop + ' ' + styles.button} onClick={this.handleStart}>Start/Stop</button>
+      <button className={styles.reset + ' ' + styles.button} onClick={this.handleReset}>Reset</button>
+    </div>
     </div>
     );
   }
