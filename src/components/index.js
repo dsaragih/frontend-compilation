@@ -15,22 +15,22 @@ return (
 		<Bars />
 
 		<NavMenu>
-		<NavLink to='/' activeStyle>
+		<NavLink to='/frontend-compilation/' activeStyle>
 			Home
 		</NavLink>
-		<NavLink to='/drum' activeStyle>
+		<NavLink to='/frontend-compilation/drum' activeStyle>
 			Drum
 		</NavLink>
-		<NavLink to='/quote' activeStyle>
+		<NavLink to='/frontend-compilation/quote' activeStyle>
 			Quote Generator
 		</NavLink>
-		<NavLink to='/calc' activeStyle>
+		<NavLink to='/frontend-compilation/calc' activeStyle>
 			Calculator
 		</NavLink>
-		<NavLink to='/markdown' activeStyle>
+		<NavLink to='/frontend-compilation/markdown' activeStyle>
 			Markdown to HTML
 		</NavLink>
-		<NavLink to='/timer' activeStyle>
+		<NavLink to='/frontend-compilation/timer' activeStyle>
 			Timer
 		</NavLink>
 		{/* Second Nav */}

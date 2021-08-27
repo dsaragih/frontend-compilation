@@ -13,12 +13,12 @@ function App() {
     <Router>
       <Navbar/>
       <Switch>
-        <Route path='/' exact component={Drum} />
-        <Route path='/drum' component={Drum} />
-        <Route path='/quote' component={Quote} />
-        <Route path='/calc' component={Calculator} />
-        <Route path='/markdown' component={Markdown} />
-        <Route path='/timer' component={Timer} />
+        <Route path='/frontend-compilation/' exact component={Drum} />
+        <Route path='/frontend-compilation/drum' component={Drum} />
+        <Route path='/frontend-compilation/quote' component={Quote} />
+        <Route path='/frontend-compilation/calc' component={Calculator} />
+        <Route path='/frontend-compilation/markdown' component={Markdown} />
+        <Route path='/frontend-compilation/timer' component={Timer} />
       </Switch>
     </Router>
   );
